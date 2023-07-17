@@ -16,6 +16,7 @@
     "host": "dpg-ciqi7itgkuvrtocdlc00-a.singapore-postgres.render.com",
     "dialect": "postgres",
     "timezone": "+07:00",
+    "logging": false,
     "dialectOptions":{
       "ssl":{
         "require":true,

@@ -6,7 +6,6 @@ const { notFound, errorHandler } = require('./src/middlewares/errorHandler')
 const config =  require('./config.js');
 
 const app = express();
-const PORT = process.env.PORT;
 
 app.use(express.json())
 

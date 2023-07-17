@@ -4,8 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "set NODE_ENV=development&& node server.js",
-    "start": "set NODE_ENV=production&& node server.js"
+    "dev": "set NODE_ENV=development&& nodemon server.js",
+    "pro": "set NODE_ENV=production&& nodemon server.js",
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",

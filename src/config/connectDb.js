@@ -5,12 +5,12 @@ const sequelize = new Sequelize(config.DB_NAME , config.DB_USERNAME, config.DB_P
   host: config.DB_HOST ,
   dialect: config.DB_DIALECT ,
   logging:false,
-  dialectOptions:{
-    'ssl':{
-      "require":true,
-      "rejectUnauthorized":false
-    }
-  }
+  // dialectOptions:{
+  //   'ssl':{
+  //     "require":true,
+  //     "rejectUnauthorized":false
+  //   }
+  // }
 });
 
 const connectDatabase = async () => {

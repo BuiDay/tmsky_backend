@@ -21,7 +21,9 @@ module.exports = (sequelize, DataTypes) => {
     CoachId: DataTypes.STRING,
     title:DataTypes.TEXT,
     start:DataTypes.DATE,
-    end:DataTypes.DATE
+    end:DataTypes.DATE,
+    backgroundColor:DataTypes.STRING,
+    isComfirm:DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Schedule',

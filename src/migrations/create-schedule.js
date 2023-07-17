@@ -22,6 +22,12 @@ module.exports = {
       end: {
         type: Sequelize.DATE
       },
+      backgroundColor:{
+        type: Sequelize.STRING
+      },
+      isComfirm:{
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
