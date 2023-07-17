@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "tmsky_app",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "logging": false,
+    "timezone": "+07:00"
+  },
+
+  "production": {
+    "username": "db_tmsky_user",
+    "password": "HE5TLqXBDDc5lRMgNBVYDTuAhIhALtU3",
+    "database": "db_tmsky",
+    "host": "dpg-ciqi7itgkuvrtocdlc00-a.singapore-postgres.render.com",
+    "dialect": "postgres",
+    "timezone": "+07:00",
+    "dialectOptions":{
+      "ssl":{
+        "require":true,
+        "rejectUnauthorized":false
+      }
+    }
+  }
+}
