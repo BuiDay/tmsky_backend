@@ -3,8 +3,9 @@ const cors = require('cors')
 const connectDatabase = require( "./src/config/connectDb")
 const initRoutes =  require('./src/routes')
 const { notFound, errorHandler } = require('./src/middlewares/errorHandler')
-const config =  require('./config.js');
-
+// const config =  require('./config.js');
+const dotenv = require('dotenv');
+dotenv.config()
 const app = express();
 
 app.use(express.json())
@@ -13,12 +14,12 @@ app.use(cors());
 
 initRoutes(app)
 
-console.log(config)
+// console.log(config)
 
 connectDatabase()
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(config.PORT, config.HOST, () => {
-    console.log(`APP LISTENING ON http://${config.HOST}:${config.PORT}`);
+app.listen(process.env.PORT, process.env.HOST, () => {
+    console.log(`APP LISTENING ON http://${process.env.HOST}:${process.env.PORT}`);
 })
