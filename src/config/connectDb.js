@@ -1,9 +1,9 @@
 const {Sequelize} = require('sequelize');
 const config =  require('../../config');
 
-const sequelize = new Sequelize("db_tmsky" , "db_tmsky_user", "HE5TLqXBDDc5lRMgNBVYDTuAhIhALtU3", {
-  host: "dpg-ciqi7itgkuvrtocdlc00-a.singapore-postgres.render.com" ,
-  dialect:"postgres" ,
+const sequelize = new Sequelize(config.DB_NAME , config.DB_USERNAME, config.DB_PASSWORD, {
+  host: config.DB_HOST ,
+  dialect: config.DB_DIALECT ,
   logging:false,
   dialectOptions:{
     'ssl':{
