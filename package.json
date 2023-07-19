@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "set NODE_ENV=development&& nodemon server.js",
     "pro": "set NODE_ENV=production&& nodemon server.js",
-    "start": "babel-node build/server.js",
+    "start": "babel-node server.js",
     "build-src": "babel src -d build --copy-files",
     "build":"node build/server.js"
   },
