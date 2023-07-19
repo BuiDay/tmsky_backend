@@ -1,10 +1,13 @@
 const express = require("express");
 const cors = require('cors')
-const connectDatabase = require( "./src/config/connectDb")
-const initRoutes =  require('./src/routes')
-const { notFound, errorHandler } = require('./src/middlewares/errorHandler')
+const connectDatabase = require( "./config/connectDb")
+const initRoutes =  require('./routes')
+const { notFound, errorHandler } = require('./middlewares/errorHandler')
 // const config =  require('./config.js');
 const dotenv = require('dotenv');
+require("@babel/core").transform("code", {
+    presets: ["@babel/preset-env"],
+  });
 dotenv.config()
 const app = express();
 

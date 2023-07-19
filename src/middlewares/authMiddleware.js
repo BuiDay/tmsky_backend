@@ -3,7 +3,7 @@ const asyncHandler = require("express-async-handler");
 const db = require("../models")
 
 const authMiddleware = asyncHandler(async (req, res, next) =>{
-    let accessToken = req.headers.authorization?.split(' ')[1]
+    let accessToken = req.headers.authorization.split(' ')[1]
     if (!accessToken) return res.status(401).json({
         err: 1,
         msg: 'Missing access token'
