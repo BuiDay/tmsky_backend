@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "set NODE_ENV=development&& nodemon server.js",
     "pro": "set NODE_ENV=production&& nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js --omit=dev"
   },
   "keywords": [],
   "author": "",
