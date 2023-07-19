@@ -4,11 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "set NODE_ENV=development&& nodemon server.js",
-    "pro": "set NODE_ENV=production&& nodemon server.js",
-    "start": "node build/server.js",
+    "dev": "set NODE_ENV=development&& nodemon src/server.js",
+    "pro": "set NODE_ENV=production&& nodemon src/server.js",
+    "start": "nodemon --exec babel-node src/server.js",
     "build-src": "babel src -d build --copy-files",
-    "build":"babel src -d build --copy-files"
+    "build": "node build/server.js"
   },
   "keywords": [],
   "author": "",

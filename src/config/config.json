@@ -4,6 +4,7 @@
     "password": null,
     "database": "tmsky_app",
     "host": "127.0.0.1",
+    "port":"3000",
     "dialect": "mysql",
     "logging": false,
     "timezone": "+07:00"
@@ -14,6 +15,7 @@
     "password": "HE5TLqXBDDc5lRMgNBVYDTuAhIhALtU3",
     "database": "db_tmsky",
     "host": "dpg-ciqi7itgkuvrtocdlc00-a.singapore-postgres.render.com",
+    "port":"5432",
     "dialect": "postgres",
     "timezone": "+07:00",
     "logging": false,
