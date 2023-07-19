@@ -5,9 +5,7 @@ const initRoutes =  require('./routes')
 const { notFound, errorHandler } = require('./middlewares/errorHandler')
 // const config =  require('./config.js');
 const dotenv = require('dotenv');
-require("@babel/core").transform("code", {
-    presets: ["@babel/preset-env"],
-  });
+
 dotenv.config()
 const app = express();
 
@@ -23,6 +21,6 @@ connectDatabase()
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(process.env.PORT, process.env.HOST, () => {
-    console.log(`APP LISTENING ON http://${process.env.HOST}:${process.env.PORT}`);
+app.listen(process.env.PORT, () => {
+    console.log(`APP LISTENING ON ${process.env.PORT}`);
 })
