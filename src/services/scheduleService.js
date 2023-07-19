@@ -105,13 +105,15 @@ const getScheduleByIdService = (id) => new Promise(async (resolve, reject) => {
         resolve({
             err: response ? 0 : 1,
             msg: response ? 'OK' : 'Failed',
-            response
+            data:response
         })
     } catch (error) {
         reject(error)
         console.log(error)
     }
 })
+
+
 
 
 

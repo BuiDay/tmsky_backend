@@ -12,10 +12,13 @@ app.use(express.json())
 app.use(cors());
 
 initRoutes(app)
+
+console.log(config)
+
 connectDatabase()
 app.use(notFound);
 app.use(errorHandler);
 
 app.listen(config.PORT, config.HOST, () => {
-    console.log(`APP LISTENING ON http://${config.HOST}:${config.PORT}`);
+    console.log(`APP LISTENING ON http://${config.DB_HOST}:${config.PORT}`);
 })

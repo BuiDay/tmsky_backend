@@ -1,12 +1,12 @@
-const db = require ('../models')
-const { Op } = require("sequelize");
+const db = require('../models')
+const { Op, where } = require("sequelize");
 
 const StaffListService = () => new Promise(async (resolve, reject) => {
     try {
         let response = await db.User.findAll({
-            where:{
-                Role:{
-                    [Op.in]:["Admin","Coach","Admin,Coach","Coach,Admin"]
+            where: {
+                Role: {
+                    [Op.in]: ["Admin", "Coach", "Admin,Coach", "Coach,Admin"]
                 }
             },
             raw: true,
@@ -14,8 +14,8 @@ const StaffListService = () => new Promise(async (resolve, reject) => {
             attributes: {
                 exclude: ['Password']
             },
-            include:[{
-                model:db.Coach,
+            include: [{
+                model: db.Coach,
                 as: 'coaches',
                 attributes: ["Level"]
             }]
@@ -23,7 +23,7 @@ const StaffListService = () => new Promise(async (resolve, reject) => {
         resolve({
             err: response ? 0 : 1,
             msg: response ? 'OK' : 'Failed',
-            data:response
+            data: response
         })
     } catch (error) {
         reject(error)
@@ -33,9 +33,9 @@ const StaffListService = () => new Promise(async (resolve, reject) => {
 const CoachListService = () => new Promise(async (resolve, reject) => {
     try {
         let response = await db.User.findAll({
-            where:{
-                Role:{
-                    [Op.in]:["Coach","Admin,Coach","Coach,Admin"]
+            where: {
+                Role: {
+                    [Op.in]: ["Coach", "Admin,Coach", "Coach,Admin"]
                 }
             },
             raw: true,
@@ -47,11 +47,34 @@ const CoachListService = () => new Promise(async (resolve, reject) => {
         resolve({
             err: response ? 0 : 1,
             msg: response ? 'OK' : 'Failed',
-            data:response
+            data: response
         })
     } catch (error) {
         reject(error)
     }
 })
 
-module.exports = {StaffListService,CoachListService}
+
+const CoachComfirmSchedulService = (id) => new Promise(async (resolve, reject) => {
+    try {
+        let response = await db.Schedule.update(
+            {
+                isComfirm: true
+            },
+            {
+                where:
+                {
+                    CoachId: id,
+                }
+            })
+        resolve({
+                err: response ? 0 : 1,
+                msg: response ? 'OK' : 'Failed',
+                data: response
+            })
+    } catch (error) {
+        reject(error)
+    }
+})
+
+module.exports = { StaffListService, CoachListService, CoachComfirmSchedulService }

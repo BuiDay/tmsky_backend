@@ -8,7 +8,7 @@ dotenv.config({
 module.exports = {
     NODE_ENV : process.env.NODE_ENV || "",
     HOST : process.env.HOST || "localhost",
-    PORT : process.env.PORT || "3333",
+    PORT : process.env.PORT || "8888",
     DB_HOST : process.env.DB_HOST || "localhost",
     DB_NAME : process.env.DB_NAME || "tmsky_app",
     DB_USERNAME : process.env.DB_USERNAME || "root",
